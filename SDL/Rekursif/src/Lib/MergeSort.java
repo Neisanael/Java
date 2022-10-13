@@ -1,22 +1,31 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package Lib;
 
-import static java.lang.System.*;
-import java.util.Arrays;
-
+/**
+ *
+ * @author admin
+ */
 public class MergeSort {
 
-public static void main(String[] args) {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
         int[] arr = {5, 8, 26, 15, 11, 31, 7, 40, 23, 25};
-        int[] dest = {5, 8, 26, 15, 11, 31, 7, 40, 23, 25};
         
-        mergeSort(arr, dest, 0, arr.length);
-        for (int i = 0; i < dest.length; i++) {
-            System.out.println(dest[i]);
+        mergeSort(arr);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
         }
+    }
+    
+    public static void mergeSort(int[] x){
+        int[] source = x.clone();
+        mergeSort(source, x, 0, x.length);
     }
     
     public static void mergeSort(int[] arr, int[] dest,int awal, int akhir){
@@ -51,4 +60,3 @@ public static void main(String[] args) {
         }
     }
 }
-
