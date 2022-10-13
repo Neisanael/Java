@@ -34,7 +34,7 @@ public class InputDataKTP extends JFrame implements ActionListener{
         frame.setVisible(true);
     }
 
-    public InputDataKTP() {
+    private InputDataKTP() {
         Container contentPane = getContentPane();
         contentPane.setLayout(null);
 
