@@ -174,7 +174,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 arr[i] = br.readLine();
                 i++;
             }
-            if (arr[0].equalsIgnoreCase(usernameText.getText()) && arr[1].equals(passwordText.getText())) {
+            if (arr[0].equalsIgnoreCase(enkripsiGenerator.enkripsiGenerator(usernameText.getText())) && arr[1].equals(enkripsiGenerator.enkripsiGenerator(passwordText.getText()))) {
                 JOptionPane.showMessageDialog(rootPane, "Benar");
                 return "benar";
             } else {

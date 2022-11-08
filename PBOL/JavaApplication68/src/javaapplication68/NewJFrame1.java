@@ -5,6 +5,7 @@
  */
 package javaapplication68;
 
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -46,6 +47,12 @@ public class NewJFrame1 extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
             }
         });
 
@@ -103,11 +110,18 @@ public class NewJFrame1 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         File inFile = new File("D://215314043/215314043.txt");
         FileWriter fw = null;
-        String sw = jTextField1.getText() + "\n" + jTextField2.getText();
         try {
+            
             fw = new FileWriter(inFile);
-            jTextField1.write(fw);
+            
+//            jTextField1.write(fw);
             if (jTextField2.getText().equals(jTextField3.getText())) {
+//                fw.write(System.lineSeparator());
+                String usernameEdit = enkripsiGenerator.enkripsiGenerator(jTextField1.getText());
+                jTextField1.setText(usernameEdit);
+                String passwordEdit = enkripsiGenerator.enkripsiGenerator(jTextField2.getText());
+                jTextField2.setText(passwordEdit);
+                jTextField1.write(fw);
                 fw.write(System.lineSeparator());
                 jTextField2.write(fw);
                 this.dispose();
@@ -125,6 +139,11 @@ public class NewJFrame1 extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        }
+    }//GEN-LAST:event_jTextField1KeyPressed
 
     /**
      * @param args the command line arguments
@@ -170,4 +189,5 @@ public class NewJFrame1 extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
+
 }
