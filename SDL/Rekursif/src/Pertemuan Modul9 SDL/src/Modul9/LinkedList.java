@@ -75,9 +75,20 @@ public class LinkedList {
     public int size() {
         return size;
     }
+    
+    public boolean isEmpty(){
+        if(size==0){
+            return false;
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
         LinkedList link = new LinkedList();
+        if(link.isEmpty()){
+        }else{
+            System.out.println("Kosong goblok!");
+        }
         link.addFirst(8);
         link.print();
         System.out.println("Ukuran : " + link.size);
@@ -101,6 +112,10 @@ public class LinkedList {
             System.out.println("ada");
         }else{
             System.out.println("Tidak ada");
+        }
+        if(link.isEmpty()){
+            System.out.println("Ada isinya goblok!");
+        }else{
         }
     }
 }
