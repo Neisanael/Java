@@ -53,8 +53,8 @@ public class LinkedList {
 
     public ListNode search(int a) {
         ListNode bantu = head.next;
-        for (int i = 0; i < size; i++) {
-            if (a == bantu.getElemen()) {
+        while(bantu != head) {
+            if (a == bantu.elemen) {
                 return bantu;
             }
             bantu = bantu.next;
@@ -66,7 +66,7 @@ public class LinkedList {
         ListNode bantu1 = new ListNode();
         bantu1 = head.next;
         while (bantu1 != head) {
-            System.out.print(bantu1.elemen + "\t");
+            System.out.print(bantu1.elemen + " ");
             bantu1 = bantu1.next;
         }
         System.out.println("");
