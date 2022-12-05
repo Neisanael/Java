@@ -1,4 +1,4 @@
-package Modul9;
+package searching2;
 
 public class ListNode {
 
