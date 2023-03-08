@@ -7,18 +7,14 @@ public class MainTree {
     public static void main(String[] args) {
         Scanner dtSc = new Scanner(System.in);
         Tree Ob = new Tree();
-        Ob.Insert(42);
-        Ob.Insert(21);
-        Ob.Insert(38);
-        Ob.Insert(27);
-        Ob.Insert(71);
-        Ob.Insert(82);
-        Ob.Insert(55);
-        Ob.Insert(63);
-        Ob.Insert(6);
-        Ob.Insert(2);
-        Ob.Insert(40);
-        Ob.Insert(12);
+        Ob.Insert(17);
+        Ob.Insert(28);
+        Ob.Insert(29);
+        Ob.Insert(88);
+        Ob.Insert(97);
+        Ob.Insert(76);
+        Ob.Insert(54);
+        Ob.Insert(80);
         System.out.println();
         System.out.println("PreOrder : ");
         Ob.preOrderTransversal();
