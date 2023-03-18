@@ -1,4 +1,4 @@
-package binary_search_tree;
+package binary_search_tree_copy1;
 
 public class TreeNode {
 
@@ -59,14 +59,14 @@ public class TreeNode {
     public void insert(int in) {
         if (in <= data) {
             if (leftNode == null) {
-                System.out.println("Left Node "+in);
+                System.out.println(in + " Left "+this.getData());
                 setLeftNode(new TreeNode(in, this));
             } else {
                 leftNode.insert(in);
             }
         } else {
             if (rightNode == null) {
-                System.out.println("Right Node "+in);
+                System.out.println(in + " Right "+this.getData());
                 setRightNode(new TreeNode(in, this));
             } else {
                 rightNode.insert(in);

@@ -1,4 +1,4 @@
-package binary_search_tree;
+package binary_search_tree_copy1;
 
 public class Binary_Search_tree {
 
@@ -16,6 +16,15 @@ public class Binary_Search_tree {
         Ob.Insert(2);
         Ob.Insert(40);
         Ob.Insert(12);
+        System.out.println();
+        System.out.println("PreOrder : ");
+        Ob.preOrderTransversal();
+        System.out.println();
+        if (Ob.delete(0)) {
+            System.out.println("Berhasil Delete");
+        } else {
+            System.out.println("Tidak Berhasil Delete");
+        }
         System.out.println();
         System.out.println("PreOrder : ");
         Ob.preOrderTransversal();

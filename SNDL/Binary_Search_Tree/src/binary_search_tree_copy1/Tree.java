@@ -1,4 +1,4 @@
-package binary_search_tree;
+package binary_search_tree_copy1;
 
 public class Tree {
 
@@ -68,17 +68,54 @@ public class Tree {
         }
     }
 
-    public TreeNode getCurrent(int x) {
+    public TreeNode getCurrent(int current) {
         TreeNode data = root;
         while (data != null) {
-            if (x == data.getData()) {
+            if (current == data.getData()) {
                 return data;
-            } else if (x < data.getData()) {
+            } else if (current < data.getData()) {
                 data = data.getLeftNode();
             } else {
                 data = data.getRightNode();
             }
         }
         return null;
+    }
+
+    public TreeNode search(int search) {
+        return getCurrent(search);
+    }
+
+    public boolean delete(int data) {
+        if (root == null) {
+            return false;
+        } else {
+            root = deleteHelper(root, data);
+            return true;
+        }
+    }
+
+    private TreeNode deleteHelper(TreeNode node, int data) {
+        if (node == null) {
+            return null;
+        }
+
+        if (data == node.getData()) {
+            if (node.getLeftNode() == null && node.getRightNode() == null) {
+                return null;
+            } else if (node.getLeftNode() == null) {
+                return node.getRightNode();
+            } else if (node.getRightNode() == null) {
+                return node.getLeftNode();
+            } else {
+                System.out.println("Tidak berhasil menghapus");
+                return node;
+            }
+        } else if (data < node.getData()) {
+            node.setLeftNode(deleteHelper(node.getLeftNode(), data));
+        } else {
+            node.setRightNode(deleteHelper(node.getRightNode(), data));
+        }
+        return node;
     }
 }
