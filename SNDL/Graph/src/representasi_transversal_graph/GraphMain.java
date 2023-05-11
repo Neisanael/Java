@@ -1,35 +1,39 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package representasi_transversal_graph;
 
-/**
- *
- * @author neisanael
- */
 public class GraphMain {
 
     public static void main(String[] args) {
-        // Create a graph
-        Graph graph = new Graph(10); // maxVertex = 10
+  
+        Graph graph = new Graph(10);
 
-        // Add vertices
         graph.addVertex('A');
         graph.addVertex('B');
         graph.addVertex('C');
-        // Add more vertices as needed...
+        graph.addVertex('D');
+        graph.addVertex('F');
+        graph.addVertex('G');
+        graph.addVertex('H');
+        
 
-        // Add edges
-        graph.addEdge('A', 'B', 1);
-        graph.addEdge('B', 'C', 2);
-        // Add more edges as needed...
-
-        // Display the graph
-        System.out.println("Graph:");
+        graph.addEdge('A', 'B', 5);
+        graph.addEdge('A', 'F', 4);
+        graph.addEdge('A', 'D', 7);
+        graph.addEdge('B', 'C', 7);
+        graph.addEdge('B', 'D', 6);
+        graph.addEdge('F', 'G', 9);
+        graph.addEdge('D', 'C', 6);
+        graph.addEdge('D', 'G', 5);
+        graph.addEdge('C', 'H', 15);
+        graph.addEdge('C', 'G', 9);
+        graph.addEdge('G', 'H', 8);
+        
+        System.out.println("Show:");
         graph.show();
-
-        // Perform depth-first search
+        
+        System.out.println("");
+        System.out.println("ToString:");
+        System.out.println(graph.toString());
+        
         System.out.println("DFS traversal:");
         graph.dfs();
 

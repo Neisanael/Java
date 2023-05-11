@@ -1,15 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package graph;
 
-/**
- *
- * @author natha
- */
 public class Graph {
-private int maxVertex;
+
+    private int maxVertex;
     private Vertex[] vertexList;
     private int[][] adjacencyMatrix;
     private int countVertex;

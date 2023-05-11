@@ -45,27 +45,11 @@ public class Graph {
         return -1;
     }
 
-    public void show() {
-        for (int i = 0; i < countVertex; i++) {
-            System.out.println(vertexList[i]);
-        }
-        System.out.println();
-
-        for (int i = 0; i < countVertex; i++) {
-            for (int j = 0; j < countVertex; j++) {
-                System.out.print(adjacencyMatrix[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
-
     public void dfs() {
-        // Initialize all vertices as not visited
         for (int i = 0; i < countVertex; i++) {
             vertexList[i].setVisited(false);
         }
 
-        // Perform DFS traversal starting from each unvisited vertex
         for (int i = 0; i < countVertex; i++) {
             if (!vertexList[i].isVisited()) {
                 dfsRecursive(i);
@@ -74,13 +58,9 @@ public class Graph {
     }
 
     private void dfsRecursive(int vertexIndex) {
-        // Mark the current vertex as visited
         vertexList[vertexIndex].setVisited(true);
-
-        // Perform any desired operations on the current vertex
         System.out.print(vertexList[vertexIndex].getLabel() + " ");
 
-        // Recur for all adjacent vertices
         for (int i = 0; i < countVertex; i++) {
             if (adjacencyMatrix[vertexIndex][i] != 0 && !vertexList[i].isVisited()) {
                 dfsRecursive(i);
@@ -92,18 +72,22 @@ public class Graph {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < countVertex; i++) {
-            sb.append(vertexList[i]);
-            sb.append("\n");
-        }
-        sb.append("\n");
-
-        for (int i = 0; i < countVertex; i++) {
             for (int j = 0; j < countVertex; j++) {
                 sb.append(adjacencyMatrix[i][j]);
-                sb.append(" ");
+                sb.append("\t");
             }
             sb.append("\n");
         }
         return sb.toString();
+    }
+
+    public void show() {
+        for (int i = 0; i < countVertex; i++) {
+            for (int j = 0; j < countVertex; j++) {
+                if (adjacencyMatrix[i][j] != 0) {
+                    System.out.println(vertexList[i].getLabel() + " terhubung ke " + vertexList[j].getLabel() + " dengan beban " + adjacencyMatrix[i][j]);
+                }
+            }
+        }
     }
 }
