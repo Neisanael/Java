@@ -1,5 +1,5 @@
 package representasi_transversal_graph;
-
+ 
 public class Graph {
 
     private int maxVertex;
@@ -85,7 +85,8 @@ public class Graph {
         for (int i = 0; i < countVertex; i++) {
             for (int j = 0; j < countVertex; j++) {
                 if (adjacencyMatrix[i][j] != 0) {
-                    System.out.println(vertexList[i].getLabel() + " terhubung ke " + vertexList[j].getLabel() + " dengan beban " + adjacencyMatrix[i][j]);
+                    System.out.println(vertexList[i].getLabel() + " terhubung ke " + 
+                            vertexList[j].getLabel() + " dengan beban " + adjacencyMatrix[i][j]);
                 }
             }
         }
