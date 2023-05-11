@@ -1,5 +1,7 @@
 package representasi_transversal_graph;
+
 public class Vertex {
+
     private char label;
     private boolean flagVisited;
 
