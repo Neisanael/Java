@@ -14,7 +14,6 @@ public class GraphMain {
         graph.addVertex('G');
         graph.addVertex('H');
         
-
         graph.addEdge('A', 'B', 5);
         graph.addEdge('A', 'F', 4);
         graph.addEdge('A', 'D', 7);
