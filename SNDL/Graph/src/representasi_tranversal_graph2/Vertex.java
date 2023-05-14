@@ -1,4 +1,4 @@
-package graph;
+package representasi_tranversal_graph2;
 
 public class Vertex {
 

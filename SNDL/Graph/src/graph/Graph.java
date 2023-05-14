@@ -31,7 +31,7 @@ public class Graph {
 
     private int indexVertex(char label) {
         for (int i = 0; i < countVertex; i++) {
-            if (vertexList[i].label == label) {
+            if (vertexList[i].getLabel() == label) {
                 return i;
             }
         }
@@ -40,23 +40,23 @@ public class Graph {
 
     public void show() {
         for (int i = 0; i < countVertex; i++) {
-            System.out.print(vertexList[i].label + ": ");
             for (int j = 0; j < countVertex; j++) {
                 if (adjacencyMatrix[i][j] != 0) {
-                    System.out.print(vertexList[j].label + "(" + adjacencyMatrix[i][j] + ") ");
+                    System.out.println(vertexList[i].getLabel() + " terhubung ke "
+                            + vertexList[j].getLabel() + " dengan beban " + adjacencyMatrix[i][j]);
                 }
             }
-            System.out.println();
         }
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < countVertex; i++) {
-            sb.append(vertexList[i].label).append(": ");
+            sb.append(vertexList[i].getLabel()).append(": ");
             for (int j = 0; j < countVertex; j++) {
                 if (adjacencyMatrix[i][j] != 0) {
-                    sb.append(vertexList[j].label).append("(").append(adjacencyMatrix[i][j]).append(") ");
+                    sb.append(vertexList[j].getLabel()).append("(").append(
+                            adjacencyMatrix[i][j]).append(") ");
                 }
             }
             sb.append("\n");
