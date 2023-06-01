@@ -35,10 +35,12 @@ public class MainPrim {
         graph.addEdge('H', 'I', 6);
         graph.addEdge('I', 'J', 7);
 
-        ArrayList<Edge> primEdges = (ArrayList<Edge>) graph.getPrimEdges();
+        ArrayList<Edge> primEdges = graph.getPrimEdges();
         System.out.println("Daftar edges:");
         for (Edge edge : primEdges) {
-            System.out.println(vertexLabel(edge.getVertexA()) + vertexLabel(edge.getVertexB()) + " (Weight: " + edge.getWeight() + ")");
+            System.out.println(vertexLabel(edge.getVertexA()) 
+                    + vertexLabel(edge.getVertexB()) + " (Weight: " 
+                    + edge.getWeight() + ")");
         }
 
         int totalWeight = 0;

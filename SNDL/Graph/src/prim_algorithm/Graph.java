@@ -1,8 +1,6 @@
 package prim_algorithm;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class Graph {
 
@@ -67,56 +65,10 @@ public class Graph {
         }
     }
 
-    public void bfs() {
-        for (int i = 0; i < countVertex; i++) {
-            vertexList[i].setVisited(false);
-        }
-
-        Queue<Integer> queue = new LinkedList<>();
-        vertexList[0].setVisited(true);
-        System.out.print(vertexList[0].getLabel() + " ");
-        queue.add(0);
-
-        while (!queue.isEmpty()) {
-            int currentVertexIndex = queue.remove();
-
-            for (int i = 0; i < countVertex; i++) {
-                if (adjacencyMatrix[currentVertexIndex][i] != 0 && !vertexList[i].isVisited()) {
-                    vertexList[i].setVisited(true);
-                    System.out.print(vertexList[i].getLabel() + " ");
-                    queue.add(i);
-                }
-            }
-        }
-    }
-
-    public void dfs() {
-        for (int i = 0; i < countVertex; i++) {
-            vertexList[i].setVisited(false);
-        }
-
-        for (int i = 0; i < countVertex; i++) {
-            if (!vertexList[i].isVisited()) {
-                dfsRecursive(i);
-            }
-        }
-    }
-
-    private void dfsRecursive(int vertexIndex) {
-        vertexList[vertexIndex].setVisited(true);
-        System.out.print(vertexList[vertexIndex].getLabel() + " ");
-
-        for (int i = 0; i < countVertex; i++) {
-            if (adjacencyMatrix[vertexIndex][i] != 0 && !vertexList[i].isVisited()) {
-                dfsRecursive(i);
-            }
-        }
-    }
-
     public ArrayList<Edge> getPrimEdges() {
         ArrayList<Edge> primEdges = new ArrayList<>();
         boolean[] visited = new boolean[maxVertex];
-        visited[0] = true;
+        visited[6] = true;
 
         while (primEdges.size() < countVertex - 1) {
             int minWeight = Integer.MAX_VALUE;
